@@ -129,6 +129,8 @@ async def checkPOPN():
 
 
 async def main():
+    await client.create_tweet("投稿テストです。")
+
     while True:
         now = datetime.now(ZoneInfo("Asia/Tokyo"))
         # 8時に処理を開始
