@@ -15,7 +15,7 @@ http = AsyncClient()
 def checkContainMachLand(stores: ResultSet[Tag]) -> bool:
     for store in stores:
         print(store.text)
-        if "テクノワールド" in store.text:
+        if "マッハランド" in store.text:
             return True
     return False
 
@@ -132,7 +132,7 @@ async def main():
     while True:
         now = datetime.now(ZoneInfo("Asia/Tokyo"))
         # 8時に処理を開始
-        if now.hour == 20 and now.minute == 33 and now.second == 0:
+        if now.hour == 8 and now.minute == 0 and now.second == 0:
             await checkPLRS()
             await checkNOS()
             await checkPOPN()
