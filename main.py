@@ -6,7 +6,7 @@ from httpx import AsyncClient
 from bs4 import BeautifulSoup, ResultSet, Tag
 from typing import Literal
 
-client = twikit.Client(language="ja-JP")
+client = twikit.Client(language="ja-JP", proxy="http://localhost:8118")
 client.load_cookies("cookies.json")
 
 http = AsyncClient()
