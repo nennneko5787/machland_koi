@@ -129,15 +129,15 @@ async def checkPOPN():
 
 
 async def main():
-    await client.create_tweet("投稿テストです。")
-
     while True:
         now = datetime.now(ZoneInfo("Asia/Tokyo"))
         # 8時に処理を開始
         if now.hour == 8 and now.minute == 0 and now.second == 0:
+            print("処理を開始")
             await checkPLRS()
             await checkNOS()
             await checkPOPN()
+            print("処理を終了")
 
         await asyncio.sleep(1)
 
